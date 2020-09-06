@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    // "module": "e",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "es2020",
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost",
+      "es2015"
+    ],
+    "types": [
+      "vue",
+      "jest"
+    ]
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.spec.ts",
+    "./*.tsx",
+    "bbb.spec.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
