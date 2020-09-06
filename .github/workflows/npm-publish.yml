@@ -5,7 +5,7 @@ name: Node.js Package
 
 on:
   release:
-    types: [created]
+    types: [created, edited]
 
 jobs:
   build:
@@ -15,8 +15,15 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm ci
-      - run: npm test
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build # will run `yarn build` command
+      # - uses: borales/actions-yarn@v2.0.0
+      #   with:
+      #     cmd: test # will run `yarn test` command
 
   publish-npm:
     needs: build
